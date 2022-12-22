@@ -1,12 +1,12 @@
 # Creates Security Group for Public ALB
 resource "aws_security_group" "allows_mysql" {
-  name               = "roboshop-public-alb-${var.ENV}-mysql"
-  description        = "roboshop-${var.ENV}-mysql"
+  name               = "roboshop-public-alb-${var.ENV}"
+  description        = "roboshop-public-alb-${var.ENV}"
   vpc_id             = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description      = "Allow mysql from default VPC"
-    from_port        = var.RDS_MYSQL_PORT
+    description      = "Allow http from internet"
+    from_port        = 80
     to_port          = var.RDS_MYSQL_PORT
     protocol         = "tcp"
     cidr_blocks      = [data.terraform_remote_state.vpc.outputs.DEFAULT_VPC_CIDR]
