@@ -32,11 +32,11 @@ resource "aws_security_group" "allows_mysql" {
   vpc_id             = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description      = "Allow http from frontend only"
+    description      = "Allow http from internal traffic only"
     from_port        = 80
     to_port          = 80
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    cidr_blocks      = [data.terraform_remote_state.vpc.outputs.VPC_CIDR]
   }
 
   egress {
