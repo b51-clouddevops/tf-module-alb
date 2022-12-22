@@ -2,7 +2,7 @@ resource "aws_lb" "alb" {
   name               = var.ALB_NAME
   internal           = var.INTERNAL
   load_balancer_type = "application"
-  security_groups    = ????
+  security_groups    = var.INTERNAL ?
   subnets            = [for subnet in aws_subnet.public : subnet.id]
 
   enable_deletion_protection = true
