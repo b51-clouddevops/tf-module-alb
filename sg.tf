@@ -1,6 +1,6 @@
 # Creates Security Group for Public ALB
 resource "aws_security_group" "allows_mysql" {
-  name               = "roboshop-${var.ENV}-mysql"
+  name               = "roboshop-public-alb-${var.ENV}-mysql"
   description        = "roboshop-${var.ENV}-mysql"
   vpc_id             = data.terraform_remote_state.vpc.outputs.VPC_ID
 
