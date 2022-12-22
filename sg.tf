@@ -1,4 +1,5 @@
-# Creates Security Group for Public ALB
+# Creates Security Group for Public ALB :
+# This should only be called by the module : public
 resource "aws_security_group" "alb_public" {
 #   count              = var.INTERNAL ? 0 : 1
   name               = "roboshop-public-alb-${var.ENV}"
@@ -27,6 +28,7 @@ resource "aws_security_group" "alb_public" {
 }
 
 # Creates Security Group for Private ALB
+# This should only be called by the module : private
 resource "aws_security_group" "alb_private" {
 #   count              = var.INTERNAL ? 1 : 0
   name               = "roboshop-private-alb-${var.ENV}"
