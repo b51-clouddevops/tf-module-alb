@@ -1,6 +1,8 @@
-module "vpc" {
-  source                   = "./vendor/modules/vpc"  
+module "alb-public" {
+  source                   = "./vendor/modules/alb"  
 }
 
-We can either go with write code once, use the same for public and private loadbalancers or write individual code for public & private alb 
+module "alb-private" {
+  source                   = "./vendor/modules/alb"  
+}
 
