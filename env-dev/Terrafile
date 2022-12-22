@@ -1,3 +1,0 @@
-alb:
-    source:  "https://github.com/b51-clouddevops/tf-module-alb.git"
-    version: "main"
