@@ -1,1 +1,2 @@
 # tf-module-alb
+This module contians all the code needed to deploy Public and Private Application Load Balancer which will be called from the respective component and will be acted like a backend module.
