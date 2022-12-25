@@ -1,4 +1,6 @@
-resource "aws_lb_listener" "front_end" {
+# This should be created for internal or private load balancer only
+resource "aws_lb_listener" "private" {
+  count             = var
   load_balancer_arn = aws_lb.front_end.arn
   port              = "443"
   protocol          = "HTTPS"
